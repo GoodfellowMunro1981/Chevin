@@ -1,0 +1,60 @@
+@import "../../themes/variables.scss";
+
+.content {
+    height: 100vh;
+    min-height : 100vh;
+    background-color: #ccc;
+}
+
+.layout-body {
+    margin: auto;
+    width: 1200px;
+}
+
+@media screen and (max-width: 992px) {
+    .layout-body {
+        width: 900px;
+    }
+
+    .dx-field-item-label-location-left {
+        min-width: 200px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .layout-body {
+        width: 540px;
+    }
+}
+
+.bold-txt {
+    font-weight: bold;
+}
+
+.error-txt {
+    color: #ff4d4f;
+}
+
+.warning-txt {
+    color: #ffbf00;
+}
+
+.success-txt {
+    color: #27db2f;
+}
+
+.content {
+    display: flex;
+    // overflow-y: auto;
+}
+
+.loading-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+a {
+    text-decoration: none;
+}
