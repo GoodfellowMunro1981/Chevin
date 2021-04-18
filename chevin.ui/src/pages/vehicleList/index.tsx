@@ -90,13 +90,17 @@ const VehicleListPage: React.FC<VehicleListPageProps> = props => {
             return <Table className='vehicle-list-table'
                 columns={columns}
                 dataSource={vehicles} />
-
-
         }
 
         return <List
             itemLayout="horizontal"
             dataSource={vehicles}
+            pagination={{
+                onChange: page => {
+                  console.log(page);
+                },
+                pageSize: 10,
+              }}
             renderItem={item => (
                 <List.Item>
                     <List.Item.Meta
