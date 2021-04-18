@@ -79,7 +79,7 @@ namespace Chevin.API.Controllers
                                         FuelType = x.FuelType,
                                         MPG = x.MPG,
                                         CostPerMile = x.CostPerMile,
-                                        CostPerKM = x.CostPerKM,
+                                        CostPerKM = GetCostPerKM(x.CostPerMile),
                                         OdometerReading = x.OdometerReading,
                                         OdometerType = x.OdometerType,
                                         OdometerDate = x.OdometerDate,
@@ -107,6 +107,17 @@ namespace Chevin.API.Controllers
                 Success = success,
                 VehicleDetails = vehicleDetails
             };
+        }
+
+        private decimal? GetCostPerKM(decimal? costPerMile)
+        {
+            if(costPerMile.HasValue)
+            {
+                var costPerKm = costPerMile.Value / 1.60934m;
+                return Math.Round(costPerKm, 3);
+            }
+
+            return null;
         }
     }
 }
